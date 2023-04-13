@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} >
           <Route index element={<Navigate to="/home" />} />
-          <Route path="home" element={<HomeBody/>} />
-          <Route path="products" element={<Products />} />
+          <Route path="home" element={<HomeBody />} />
           <Route path="about" element={<About />} />
+          <Route path="products" element={<Products />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,11 @@
+.navbarProd {
+    height: 60px;
+    background-color: var(--color-bg-tertiary);
+    color: var( --color-font-primary);
+    display: flex;
+    align-items: center;
+}
+
+.menu-itemP {
+    margin: 0 20px;
+  }
