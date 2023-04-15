@@ -11,12 +11,12 @@ export default function Products() {
             <section>
                 <div className="container">
                     <div className="mt20">
-                        <nav className="navbarProd">
+                        <nav className= "navbarProd">
                             {products.map((product) => (
                                 <Link className="menu-itemP"
-                                    to={`/product/${product.number}`}
-                                    key={product.number}
-                                >
+                                    to={`/products/${product.number}`}
+                                    key={product.title1}
+                                    >
                                     {product.name}
                                 </Link>
                             ))}

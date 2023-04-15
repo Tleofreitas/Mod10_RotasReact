@@ -9,3 +9,7 @@
 .menu-itemP {
     margin: 0 20px;
   }
+
+  .menu-activeP {
+    font-weight: 700;
+  }
