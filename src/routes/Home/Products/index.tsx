@@ -21,6 +21,7 @@ export default function Products() {
                                 </Link>
                             ))}
                         </nav>
+                        <Outlet />
                 </div>
             </div>
         </section>

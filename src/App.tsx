@@ -2,7 +2,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import HomeBody from "./routes/Home/HomeBody";
 import About from "./routes/Home/About";
+import NotFound from "./routes/Home/NotFound";
 import Products from "./routes/Home/Products";
+import Product from "./routes/Home/Products/Product";
 
 function App() {
 
@@ -13,15 +15,10 @@ function App() {
           <Route index element={<Navigate to="/home" />} />
           <Route path="home" element={<HomeBody />} />
           <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
+            <Route path="products" element={<Products />} >
+              <Route path=":productId" element={<Product />} />              
+            </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
