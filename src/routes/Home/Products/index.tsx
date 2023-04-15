@@ -1,27 +1,29 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import './styles.css';
+import { getProducts } from "../../data";
+import { Link } from "react-router-dom";
 
 export default function Products() {
+    let products = getProducts();
 
     return (
         <main>
             <section>
                 <div className="container">
                     <div className="mt20">
-                            <nav className="navbarProd">
-                                <NavLink to="/home" className={({ isActive }) => isActive ? "menu-itemP menu-active" : "menu-itemP"} >
-                                    Computadores
-                                </NavLink>
-                                <NavLink to="/products" className={({ isActive }) => isActive ? "menu-itemP menu-active" : "menu-itemP"} >
-                                    Eletrônicos
-                                </NavLink>
-                                <NavLink to="/about" className={({ isActive }) => isActive ? "menu-itemP menu-active" : "menu-itemP"} >
-                                    Livros
-                                </NavLink>
-                            </nav>
-                    </div>
+                        <nav className="navbarProd">
+                            {products.map((product) => (
+                                <Link className="menu-itemP"
+                                    to={`/product/${product.number}`}
+                                    key={product.number}
+                                >
+                                    {product.name}
+                                </Link>
+                            ))}
+                        </nav>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+        </main >
     );
 }
